@@ -1,0 +1,271 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+    
+    function balanceUnchanged() {
+      return !request.resource.data.diff(resource.data).affectedKeys()
+              .hasAny(['balance', 'nationalId', 'seed_phrase']);
+    }
+    
+    function validAmount(amount) {
+      return amount is number && amount >= 0 && amount <= 1000000;
+    }
+
+    match /citizens/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isOwner(userId) && 
+                       !exists(/databases/$(database)/documents/citizens/$(userId));
+      allow update: if isOwner(userId) && 
+                       balanceUnchanged() &&
+                       request.resource.data.name is string &&
+                       request.resource.data.name.size() <= 50;
+      allow delete: if isAdmin();
+    }
+
+    match /users_wallet/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if false;
+    }
+
+    match /transfers/{transferId} {
+      allow read: if isSignedIn() && 
+                     (resource.data.from == request.auth.uid || 
+                      resource.data.to == request.auth.uid ||
+                      isAdmin());
+      allow create: if isSignedIn() &&
+                       request.resource.data.from == request.auth.uid &&
+                       request.resource.data.to != request.auth.uid &&
+                       validAmount(request.resource.data.amount) &&
+                       request.resource.data.amount > 0 &&
+                       request.resource.data.status == 'pending';
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /treasury/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /global_chat/{messageId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() &&
+                       request.resource.data.senderId == request.auth.uid &&
+                       request.resource.data.text is string &&
+                       request.resource.data.text.size() > 0 &&
+                       request.resource.data.text.size() <= 500;
+      allow update: if isSignedIn() && 
+                       resource.data.senderId == request.auth.uid;
+      allow delete: if isSignedIn() && 
+                       (resource.data.senderId == request.auth.uid || isAdmin());
+    }
+
+    match /private_chats/{chatId} {
+      allow read: if isSignedIn() && 
+                     (request.auth.uid in chatId.split('_') || isAdmin());
+      allow create: if isSignedIn() &&
+                       request.auth.uid in chatId.split('_');
+      
+      match /messages/{messageId} {
+        allow read: if isSignedIn() && 
+                       request.auth.uid in chatId.split('_');
+        allow create: if isSignedIn() &&
+                         request.resource.data.senderId == request.auth.uid &&
+                         request.auth.uid in chatId.split('_') &&
+                         request.resource.data.text.size() <= 1000;
+        allow delete: if isSignedIn() && 
+                         (resource.data.senderId == request.auth.uid || isAdmin());
+      }
+    }
+
+    match /market_items/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /users_inventory/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if false;
+    }
+
+    match /citizen_listings/{listingId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() &&
+                       request.resource.data.sellerId == request.auth.uid &&
+                       validAmount(request.resource.data.price) &&
+                       request.resource.data.price > 0;
+      allow update: if isSignedIn() &&
+                       resource.data.sellerId == request.auth.uid;
+      allow delete: if isSignedIn() &&
+                       (resource.data.sellerId == request.auth.uid || isAdmin());
+    }
+
+    match /jobs/{jobId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /users_jobs/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if false;
+    }
+
+    match /proposals/{proposalId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() &&
+                       request.resource.data.authorId == request.auth.uid;
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /constitution_votes/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isOwner(userId) &&
+                       !exists(/databases/$(database)/documents/constitution_votes/$(userId));
+      allow update: if false;
+      allow delete: if isAdmin();
+    }
+
+    match /elections/{electionId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /candidates/{candidateId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() &&
+                       request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin();
+      allow delete: if isAdmin() ||
+                       (isSignedIn() && resource.data.userId == request.auth.uid);
+    }
+
+    match /votes/{voteId} {
+      allow read: if isAdmin();
+      allow create: if isSignedIn() &&
+                       request.resource.data.voterId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /presidents/{presidentId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /presidential_announcements/{announcementId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /presidential_gifts/{giftId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /wheel_segments/{segmentId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /wheel_config/{configId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /wheel_spins/{spinId} {
+      allow read: if isSignedIn() &&
+                     (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+                       request.resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /gifts/{giftId} {
+      allow read: if isSignedIn() &&
+                     (resource.data.from == request.auth.uid || 
+                      resource.data.to == request.auth.uid ||
+                      isAdmin());
+      allow create: if isSignedIn() &&
+                       request.resource.data.from == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    match /daily_rewards/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if false;
+    }
+
+    match /city_districts/{districtId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /city_plots/{plotId} {
+      allow read: if true;
+    }
+
+    match /reports/{reportId} {
+      allow read: if isAdmin() ||
+                     (isSignedIn() && resource.data.reporterId == request.auth.uid);
+      allow create: if isSignedIn() &&
+                       request.resource.data.reporterId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    match /complaints/{complaintId} {
+      allow read: if isSignedIn() && 
+                     (resource.data.authorId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() &&
+                       request.resource.data.authorId == request.auth.uid;
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /news/{newsId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_logs/{logId} {
+      allow read, write: if isAdmin();
+    }
+
+    match /admin_messages/{msgId} {
+      allow read: if isAdmin() ||
+                     (isSignedIn() && resource.data.to == request.auth.uid);
+      allow write: if isAdmin();
+    }
+
+    match /app_config/{configId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /blocked/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /muted/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
