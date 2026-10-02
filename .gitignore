@@ -1,0 +1,15 @@
+# Secrets
+*.key
+*.pem
+*.p12
+
+# Firestore rules (يبقى محلي)
+# firestore.rules
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
