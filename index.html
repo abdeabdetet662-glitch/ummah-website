@@ -1,318 +1,369 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO -->
-    <title>أُمّة — أول دولة رقمية عربية</title>
-    <meta name="description" content="انضم لأول دولة رقمية عربية. هوية وطنية، محفظة، برلمان، انتخابات، ومدينة كاملة. حمّل مجاناً!">
-    <meta name="keywords" content="أمة, دولة رقمية, عربية, تطبيق عربي, Ummah">
-    <meta name="author" content="abdeabdetet662-glitch">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="أُمّة — أول دولة رقمية عربية">
-    <meta property="og:description" content="انضم لأول دولة رقمية عربية. حمّل مجاناً!">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/img/logo.png">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="أُمّة — أول دولة رقمية عربية">
-    <meta name="twitter:description" content="انضم لأول دولة رقمية عربية. حمّل مجاناً!">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="أُمّة — أول دولة رقمية عربية. هوية، محفظة، برلمان، وانتخابات في تطبيق واحد.">
+  <meta name="keywords" content="أمة, Ummah, دولة رقمية, تطبيق عربي, دينار رقمي">
+  <meta property="og:title" content="أُمّة — أول دولة رقمية عربية">
+  <meta property="og:description" content="انضم لآلاف المواطنين في أول دولة رقمية عربية">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdeabdetet662-glitch.github.io/ummah-website/">
+  <meta name="theme-color" content="#0a0e1a">
+  
+  <title data-i18n="meta.title">أُمّة — أول دولة رقمية عربية</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!--  Navbar                                  -->
-    <!-- ═══════════════════════════════════════ -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <span class="nav-logo-icon">🌍</span>
-                <span class="nav-logo-text">أُمّة</span>
-            </a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#features">الميزات</a></li>
-                <li><a href="#stats">الأرقام</a></li>
-                <li><a href="#download">تحميل</a></li>
-                <li><a href="about.html">عن أُمّة</a></li>
-                <li><a href="contact.html">تواصل</a></li>
-            </ul>
-            
-            <a href="#download" class="nav-cta">حمّل الآن</a>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="القائمة">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<!-- ═══ Loader ═══ -->
+<div id="loader">
+  <div class="loader-crown">👑</div>
+  <div class="loader-text">أُمّة</div>
+  <div class="loader-bar"><span></span></div>
+</div>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!--  Hero Section                            -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span>🇩🇿🇲🇦🇹🇳🇪🇬🇸🇦</span>
-                <span>أول دولة رقمية عربية</span>
-            </div>
-            
-            <h1 class="hero-title">
-                انضم إلى
-                <span class="gradient-text">أُمّة</span>
-            </h1>
-            
-            <p class="hero-subtitle">
-                هوية وطنية، محفظة رقمية، برلمان، انتخابات،
-                ومدينة كاملة — كل هذا في تطبيق واحد.
-            </p>
-            
-            <div class="hero-buttons">
-                <a href="#download" class="btn btn-primary">
-                    <span>📱</span> حمّل الآن مجاناً
-                </a>
-                <a href="#features" class="btn btn-secondary">
-                    اكتشف الميزات
-                </a>
-            </div>
-            
-            <div class="hero-stats-mini">
-                <div>
-                    <strong id="citizensCount">1000+</strong>
-                    <span>مواطن</span>
-                </div>
-                <div>
-                    <strong>22</strong>
-                    <span>دولة</span>
-                </div>
-                <div>
-                    <strong>100%</strong>
-                    <span>مجاني</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="phone-mockup">
-                <div class="phone-screen">
-                    <div class="screen-content">
-                        <div class="screen-flag">🌍</div>
-                        <div class="screen-title">أُمّة</div>
-                        <div class="screen-sub">أول دولة رقمية عربية</div>
-                    </div>
-                </div>
-            </div>
-            <div class="floating-card card-1">
-                <span>🆔</span>
-                <div>
-                    <strong>UMM-XXXX</strong>
-                    <small>رقم وطني</small>
-                </div>
-            </div>
-            <div class="floating-card card-2">
-                <span>💰</span>
-                <div>
-                    <strong>100 Đ</strong>
-                    <small>رصيدك</small>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══ Particles Background ═══ -->
+<canvas id="particles"></canvas>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!--  Features Section                        -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">✨ الميزات</span>
-                <h2 class="section-title">دولة كاملة في جيبك</h2>
-                <p class="section-subtitle">
-                    كل ما تحتاجه لتعيش تجربة مواطنة رقمية حقيقية
-                </p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🆔</div>
-                    <h3>هوية وطنية</h3>
-                    <p>احصل على رقم وطني فريد (UMM-XXXX-XXXX-XXXX) وكلمات سرية آمنة.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>محفظة رقمية</h3>
-                    <p>احصل على الدينار (Đ)، حوّل الأموال، وتاجر مع المواطنين.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏛️</div>
-                    <h3>برلمان ودستور</h3>
-                    <p>اقترح قوانين، صوّت، وشارك في حكم الدولة.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🗳️</div>
-                    <h3>انتخابات رئاسية</h3>
-                    <p>ترشّح للرئاسة أو صوّت لمن تراه مناسباً.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏙️</div>
-                    <h3>مدينة 3D</h3>
-                    <p>اشترِ أرضاً، ابنِ منزلك، وطوّر مدينتك بتقنية Three.js.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">👑</div>
-                    <h3>كن رئيساً</h3>
-                    <p>أصدر مراسيم، عيّن وزراء، وامنح ألقاباً.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h3>وظائف واقتصاد</h3>
-                    <p>اعمل، اكسب، تاجر في السوق، وابنِ إمبراطوريتك.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎡</div>
-                    <h3>عجلة الحظ</h3>
-                    <p>جرّب حظك يومياً واربح جوائز قيمة.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══ Progress Bar ═══ -->
+<div id="progress-bar"></div>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!--  Stats Section                           -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="stats" id="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="1000">0</div>
-                    <div class="stat-label">مواطن نشط</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="50000">0</div>
-                    <div class="stat-label">تحميل</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="22">0</div>
-                    <div class="stat-label">دولة عربية</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="100">0</div>
-                    <div class="stat-label">% مجاني</div>
-                </div>
-            </div>
+<!-- ═══ Navbar ═══ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">
+      <span class="logo-icon">👑</span>
+      <span class="logo-text" data-i18n="brand.name">أُمّة</span>
+    </a>
+    
+    <ul class="nav-menu">
+      <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+      <li><a href="#about" data-i18n="nav.about">عن أُمّة</a></li>
+      <li><a href="#features" data-i18n="nav.features">الميزات</a></li>
+      <li><a href="#how" data-i18n="nav.how">كيف تبدأ</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">الأسئلة</a></li>
+      <li><a href="#download" class="nav-cta" data-i18n="nav.download">تحميل</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-current" id="langBtn">
+          <span class="flag">🇩🇿</span>
+          <span class="code">AR</span>
+          <span class="arrow">▾</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button data-lang="ar"><span class="flag">🇩🇿</span> العربية</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+          <button data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
+          <button data-lang="ru"><span class="flag">🇷🇺</span> Русский</button>
         </div>
-    </section>
+      </div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+</nav>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!--  Download Section                        -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="download" id="download">
-        <div class="container">
-            <div class="download-box">
-                <span class="section-badge">📥 تحميل</span>
-                <h2 class="section-title">ابدأ رحلتك اليوم</h2>
-                <p class="section-subtitle">
-                    انضم لآلاف المواطنين في بناء أول دولة رقمية عربية
-                </p>
-                
-                <div class="download-buttons">
-                    <a href="#" class="btn btn-primary btn-large" onclick="alert('قريباً على Google Play')">
-                        <span>📱</span>
-                        <div>
-                            <small>متاح على</small>
-                            <strong>Google Play</strong>
-                        </div>
-                    </a>
-                    
-                    <a href="#" class="btn btn-secondary btn-large" onclick="alert('قريباً على App Store')">
-                        <span>🍎</span>
-                        <div>
-                            <small>متاح على</small>
-                            <strong>App Store</strong>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="download-apk">
-                    <a href="https://github.com/abdeabdetet662-glitch/Ummah/releases" 
-                       target="_blank" 
-                       class="apk-link">
-                        <span>📦</span>
-                        أو حمّل APK مباشرة من GitHub
-                    </a>
-                </div>
-                
-                <div class="download-note">
-                    <span>✅</span> مجاني بالكامل — بلا إعلانات مزعجة
-                </div>
-            </div>
+<!-- ═══ HERO ═══ -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-i18n="hero.badge">✨ الإصدار 7.0 متوفر الآن</div>
+    <h1 class="hero-title">
+      <span data-i18n="hero.title1">أول دولة</span>
+      <span class="gradient" data-i18n="hero.title2">رقمية عربية</span>
+    </h1>
+    <p class="hero-subtitle" data-i18n="hero.subtitle">
+      هوية وطنية، محفظة دينار، برلمان، محكمة، انتخابات — كل شي في تطبيق واحد على هاتفك.
+    </p>
+    <div class="hero-buttons">
+      <a href="#download" class="btn btn-primary">
+        <span data-i18n="hero.cta1">📱 حمّل الآن</span>
+      </a>
+      <a href="#about" class="btn btn-ghost">
+        <span data-i18n="hero.cta2">تعرّف أكثر →</span>
+      </a>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" data-count="1000">0</div>
+        <div class="stat-label" data-i18n="hero.stat1">مواطن</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="37">0</div>
+        <div class="stat-label" data-i18n="hero.stat2">ولاية</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="4">0</div>
+        <div class="stat-label" data-i18n="hero.stat3">لغات</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="0">$</div>
+        <div class="stat-label" data-i18n="hero.stat4">مجاناً</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-mockup">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-header">
+          <span>👑</span>
+          <span data-i18n="brand.name">أُمّة</span>
         </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════ -->
-    <!--  Footer                                  -->
-    <!-- ═══════════════════════════════════════ -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span>🌍</span>
-                        <strong>أُمّة</strong>
-                    </div>
-                    <p>أول دولة رقمية عربية. بُنيت بحب من الجزائر 🇩🇿</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>التطبيق</h4>
-                    <a href="features.html">الميزات</a>
-                    <a href="download.html">تحميل</a>
-                    <a href="about.html">عن أُمّة</a>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>قانوني</h4>
-                    <a href="privacy.html">سياسة الخصوصية</a>
-                    <a href="terms.html">الشروط</a>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>تواصل</h4>
-                    <a href="contact.html">اتصل بنا</a>
-                    <a href="https://github.com/abdeabdetet662-glitch" target="_blank">GitHub</a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>© 2026 أُمّة. جميع الحقوق محفوظة.</p>
-                <p>صُنع بـ ❤️ في الجزائر</p>
-            </div>
+        <div class="phone-balance">
+          <div class="balance-label" data-i18n="mockup.balance">رصيدك</div>
+          <div class="balance-amount">1,250 Đ</div>
         </div>
-    </footer>
+        <div class="phone-tabs">
+          <div class="ptab active">🏠</div>
+          <div class="ptab">🛒</div>
+          <div class="ptab">💬</div>
+          <div class="ptab">👤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <div class="mouse"></div>
+  </div>
+</section>
 
-    <script src="assets/js/main.js"></script>
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="about.tag">الرؤية</span>
+      <h2 data-i18n="about.title">دولة رقمية <span class="gradient">حقيقية</span></h2>
+      <p data-i18n="about.subtitle">مش مجرد تطبيق — مجتمع كامل بحوكمة وحياة رقمية</p>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="about-icon">🆔</div>
+        <h3 data-i18n="about.card1.title">هوية وطنية</h3>
+        <p data-i18n="about.card1.desc">رقم وطني فريد + كلمات سرية (Seed Phrase) لا يمكن تزويرها</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-icon">💰</div>
+        <h3 data-i18n="about.card2.title">اقتصاد حقيقي</h3>
+        <p data-i18n="about.card2.desc">دينار Đ، سوق، وظائف، عقارات، ومزاد علني</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-icon">🏛️</div>
+        <h3 data-i18n="about.card3.title">حكم ديمقراطي</h3>
+        <p data-i18n="about.card3.desc">برلمان، محكمة، دستور، انتخابات، ورئيس منتخب</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-icon">🎮</div>
+        <h3 data-i18n="about.card4.title">حياة رقمية</h3>
+        <p data-i18n="about.card4.desc">مدينة 3D، شخصية، عجلة حظ، سيارات، وقصور</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section id="features" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="features.tag">الميزات</span>
+      <h2 data-i18n="features.title">كل شي تحتاجه في <span class="gradient">تطبيق واحد</span></h2>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature reveal">
+        <div class="feature-icon">🏦</div>
+        <h4 data-i18n="features.f1">محفظة دينار</h4>
+        <p data-i18n="features.f1d">تحويلات فورية بين المواطنين</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">🛒</div>
+        <h4 data-i18n="features.f2">سوق مواطنين</h4>
+        <p data-i18n="features.f2d">بيع وشراء بين المواطنين (P2P)</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">💬</div>
+        <h4 data-i18n="features.f3">دردشة عالمية</h4>
+        <p data-i18n="features.f3d">تواصل مع كل مواطني العالم</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">🗳️</div>
+        <h4 data-i18n="features.f4">انتخابات</h4>
+        <p data-i18n="features.f4d">صوّت وترشح لمنصب الرئيس</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">🏙️</div>
+        <h4 data-i18n="features.f5">مدينة 3D</h4>
+        <p data-i18n="features.f5d">ابنِ قصرك وامتلك عقارات</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">🎡</div>
+        <h4 data-i18n="features.f6">عجلة الحظ</h4>
+        <p data-i18n="features.f6d">اربح جوائز يومية وجاكبوت</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">⚖️</div>
+        <h4 data-i18n="features.f7">محكمة</h4>
+        <p data-i18n="features.f7d">نظام عدالة كامل مع محلفين</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon">📰</div>
+        <h4 data-i18n="features.f8">أخبار</h4>
+        <p data-i18n="features.f8d">تابع آخر أخبار الدولة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="how.tag">البداية</span>
+      <h2 data-i18n="how.title">3 خطوات وتصبح <span class="gradient">مواطناً</span></h2>
+    </div>
+    
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">📲</div>
+        <h3 data-i18n="how.s1.title">حمّل التطبيق</h3>
+        <p data-i18n="how.s1.desc">حمّل APK وثبّته على هاتفك</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-icon">🆔</div>
+        <h3 data-i18n="how.s2.title">أنشئ هويتك</h3>
+        <p data-i18n="how.s2.desc">اختر بلدك، اسمك، واحفظ كلماتك السرية</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-icon">🎁</div>
+        <h3 data-i18n="how.s3.title">استلم 5 Đ</h3>
+        <p data-i18n="how.s3.desc">مكافأة ترحيب فورية في محفظتك</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="faq.tag">الأسئلة الشائعة</span>
+      <h2 data-i18n="faq.title">عندك <span class="gradient">سؤال؟</span></h2>
+    </div>
+    
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary data-i18n="faq.q1">هل التطبيق مجاني؟</summary>
+        <p data-i18n="faq.a1">نعم، 100% مجاني. لا رسوم تسجيل ولا اشتراكات.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary data-i18n="faq.q2">كيف أحصل على الدينار Đ؟</summary>
+        <p data-i18n="faq.a2">عبر المكافأة اليومية، الوظائف، العجلة، الأكواد، والهدايا الرئاسية.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary data-i18n="faq.q3">واش على بياناتي الخاصة؟</summary>
+        <p data-i18n="faq.a3">نستعمل Firebase مع 271 سطر Security Rules. ما نشاركوش بياناتك مع أي طرف ثالث.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary data-i18n="faq.q4">نقدر نبدل الهاتف؟</summary>
+        <p data-i18n="faq.a4">نعم، عبر كلماتك السرية الـ12 (Seed Phrase) ترجع حسابك في أي هاتف.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary data-i18n="faq.q5">شحال من لغة؟</summary>
+        <p data-i18n="faq.a5">4 لغات: العربية، الإنجليزية، الفرنسية، والروسية.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOWNLOAD ═══ -->
+<section id="download" class="section download-section">
+  <div class="container">
+    <div class="download-card reveal">
+      <div class="download-crown">👑</div>
+      <h2 data-i18n="download.title">ابدأ رحلتك في <span class="gradient">أُمّة</span></h2>
+      <p data-i18n="download.subtitle">حمّل التطبيق الآن — مجاناً وبلا إعلانات</p>
+      
+      <div class="download-buttons">
+        <a href="https://github.com/abdeabdetet662-glitch/Ummah/releases/latest" 
+           class="btn btn-primary btn-large" target="_blank">
+          <span>📥</span>
+          <span data-i18n="download.apk">تحميل APK</span>
+        </a>
+        <a href="#features" class="btn btn-ghost btn-large">
+          <span>📖</span>
+          <span data-i18n="download.learn">اقرأ المزيد</span>
+        </a>
+      </div>
+      
+      <div class="download-info">
+        <span>✓ <span data-i18n="download.info1">أندرويد 7+</span></span>
+        <span>✓ <span data-i18n="download.info2">12 MB</span></span>
+        <span>✓ <span data-i18n="download.info3">مجاني</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">👑</span>
+          <span class="logo-text" data-i18n="brand.name">أُمّة</span>
+        </div>
+        <p data-i18n="footer.tagline">أول دولة رقمية عربية — من هاتف واحد، بلا فريق، بلا ميزانية.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4 data-i18n="footer.col1">التطبيق</h4>
+        <a href="#features" data-i18n="nav.features">الميزات</a>
+        <a href="#how" data-i18n="nav.how">كيف تبدأ</a>
+        <a href="#download" data-i18n="nav.download">تحميل</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4 data-i18n="footer.col2">الموارد</h4>
+        <a href="privacy.html" data-i18n="footer.privacy">الخصوصية</a>
+        <a href="terms.html" data-i18n="footer.terms">الشروط</a>
+        <a href="contact.html" data-i18n="footer.contact">تواصل</a>
+      </div>
+      
+      <div class="footer-col">
+        <h4 data-i18n="footer.col3">تابعنا</h4>
+        <a href="https://github.com/abdeabdetet662-glitch" target="_blank">GitHub</a>
+        <a href="mailto:abdeabderahman62@gmail.com">Email</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p data-i18n="footer.rights">© 2026 أُمّة — كل الحقوق محفوظة.</p>
+      <p data-i18n="footer.made">صُنع بـ ❤️ من الجزائر 🇩🇿</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backTop">↑</button>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
